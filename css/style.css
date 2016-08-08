@@ -1,0 +1,276 @@
+body, a, div {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+/*navigation related*/
+.right-nav-div {
+    background-color: #f9f9f9;
+    position: fixed;
+    float:right;
+    top:0;
+    bottom: 0;
+    left: 58.33%;
+    border-left: 2px solid #999;
+}
+
+
+
+
+
+
+.name-tag {
+    padding:20px;
+    padding-left:40px;
+}
+
+.container-fluid {
+}
+
+.nav-button {
+    font-size:1.5em;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.glyphicon {
+    padding-left:20px;
+}
+
+.nav-text {
+    padding: 30px;
+}
+#nav-button-physics:hover {
+    background-color: #DDE8E0;
+}
+
+.nav-button:hover > .nav-text {
+    background-color:rgba(255,255,255,.3);
+}
+
+#nav-button-projects:hover {
+    background-color: #749CA8;
+}
+#nav-button-writing:hover {
+    background-color: #F9E0A8;
+}
+#nav-button-photography:hover {
+    background-color: #D16B54;
+}
+#nav-button-hobbies:hover {
+    background-color: #8B8378;
+}
+
+
+.spacer {
+    padding:20px;
+}
+
+
+.photo {
+    margin-top:10px;
+    border-radius: 50%;
+    height: 120px;;
+    width: 120px;
+}
+
+h1 {
+    font-size: 1.4em;
+}
+
+h2 {
+    font-size:1.8em;
+    color: #9d9d9d;
+}
+
+
+/*content related*/
+
+
+
+#physics {
+    display:block;
+    margin:auto;
+}
+.category-nav-container {
+    overflow:hidden;
+    padding-right:0px;
+}
+
+.positioning-container {
+    float:right;
+    width:100%;
+    height:100%;
+}
+
+.category-nav {
+    position: relative;
+    background-color: #fff;
+    overflow-x: hidden;
+    padding-top: 20px; /* Place content 60px from the top */
+    transition: 0.5s;
+    height:750px;
+}
+
+
+
+.glyphicon {
+    padding:0px;
+    padding-top:7px;
+    padding-right:5px;
+    font-size:9px;
+    float:left;
+}
+
+.glyphicon-temp {
+    font-size:12px;
+}
+
+#nav-box{
+    left:500px;
+}
+
+.nav-item {
+    padding:0px;
+    position: absolute;
+
+}
+
+#physics-nav{
+
+}
+
+
+/* The navigation menu links */
+.item-header {
+    font-size: 18px;
+    display: block;
+}
+.item-header-physics {
+    color:#B1D0BD;
+}
+
+.item-header-projects {
+    color:#749CA8;
+}
+
+.item {
+    padding-top:20px;
+    padding-bottom:30px;
+    padding-right:10px;
+}
+
+
+.item-description {
+    font-size: 14px;
+    color: #333;
+}
+
+#content-div{
+    position:absolute;
+    width:100%;
+    padding-top:20px;
+    margin-left:20px;
+}
+
+
+
+/*files*/
+
+.node-image {
+    border-radius: 50%;
+    opacity:.5;
+    padding:0px;
+    display: none;
+}
+.node-image:hover {
+    cursor:pointer;
+    opacity:1;
+}
+
+.dot {
+    width:20px;
+    height:20px;
+    border-radius:10px;
+    background: #fff;
+    position:relative;
+    left:0;
+    top:0;
+}
+
+.dot:hover {
+    background: #888;
+    cursor:pointer;
+}
+.node {
+    position:relative;
+    display:inline-flex;
+}
+
+.node-text {
+    /*margin: auto 2px;*/
+    margin-right:15px;
+    margin-left:-5px;
+    /*background-color: rgba(255,255,255,.3)*/
+}
+
+.item:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+.item-physics:hover {
+    border-right: 4px solid #DDE8E0;
+}
+
+.item-projects:hover {
+    border-right: 4px solid #749CA8;
+}
+
+
+
+
+/*MODAL*/
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 100px auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width:65%;}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#video-text{
+    background-color: rgba(255,255,255,.7);
+    padding:10px;
+}
