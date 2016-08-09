@@ -163,6 +163,10 @@ function updateFiles(parentID,data,itemID) {
                     break;
                 case "recipes":
 
+                    if ( $( "#svg-id" ).length ) {
+                        $("#svg-id").remove();
+                    }
+
                     modal_recipes.style.display = "block";
                     modal_recipes.style.width='auto';
                     modal_recipes.style.height='auto';
