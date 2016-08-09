@@ -162,6 +162,7 @@ function updateFiles(parentID,data,itemID) {
                     $('#myModal p').html(text);
                     break;
                 case "recipes":
+
                     modal_recipes.style.display = "block";
                     modal_recipes.style.width='auto';
                     modal_recipes.style.height='auto';
@@ -173,9 +174,13 @@ function updateFiles(parentID,data,itemID) {
                     modal_page.style.display = "block";
                     var container=document.getElementById("modal-container");
                     var img = document.createElement("img");
+                    if ( $( "#image-id" ).length ) {
+                    $("#image-id").remove();
+                    }
                     img.src=d.link;
                     img.width=900;
                     img.class="page-image";
+                    img.id="image-id";
                     container.appendChild(img);
 
                     break;
