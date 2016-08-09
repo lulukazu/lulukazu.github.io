@@ -182,9 +182,9 @@ function updateFiles(parentID,data,itemID) {
                     $("#image-id").remove();
                     }
                     img.src=d.link;
-                    img.width=900;
                     img.class="page-image";
                     img.id="image-id";
+                    img.style.width="92%"
                     container.appendChild(img);
 
                     break;
