@@ -173,14 +173,22 @@
     },
     { "id":"bench-2",
       "num":2,
+      "r": 60,
+      "img":"images/vob_documentation.png",
+      "text":"Documentation for the program.",
+      "link":"https://lululiu.wordpress.com/2013/02/04/matlab-optics-table-application/",
+      "type":"file"
+    },
+    { "id":"bench-3",
+      "num":3,
       "r": 50,
       "img":"images/bench_download.png",
       "text":"Download the .zip file.  To run tool, run Optics_UI.m in Matlab.",
       "link":"files/optics_UI.zip",
       "type": "file"
     },
-    { "id":"bench-3",
-      "num":3,
+    { "id":"bench-4",
+      "num":4,
       "r": 50,
       "img":"images/vob_gaussian.png",
       "text":"Example video showing a simple gaussian beam going through a focus.",
@@ -189,8 +197,8 @@
       "videotext":"<p>Simulated Gaussian Beam going through a focus.  Plotted using Virtual Optics Bench V2.0</p><p>Paraxial approximation</p>"
     },
 
-    { "id":"bench-4",
-      "num":4,
+    { "id":"bench-5",
+      "num":5,
       "r": 50,
       "img":"images/vob_fractional.png",
       "text":"A gaussian beam which has passed through a spiral phase plate acquires a topological charge and therefore orbital angular momentum.  The phase singularity at the center of the beam shows up as a dark spot which expands with increasing charge.",
@@ -201,21 +209,74 @@
   ],
 
   "recipes": [
-    { "id":"recipes-1",
+  { "id":"recipes-1",
+    "num":1,
+    "r": 60,
+    "img":"images/world.png",
+    "text":"Read the documentation for an introduction to the self-organizing data web app.  Data was scraped from 3 different recipe websites and contains individual recipes along with each of their ingredients.",
+    "link":"files/recipes_doc.pdf",
+    "type":"file"
+  },
+  { "id":"recipes-2",
+    "num":2,
+    "r": 50,
+    "img":"images/recipe_dots.png",
+    "text":"Launch a working version of the tool overlaid with this website!  Click anywhere outside of the overlay window to close. ",
+    "link":"#",
+    "type": "recipes"
+  }
+],
+
+  "blog": [
+    { "id":"blog-1",
       "num":1,
       "r": 60,
-      "img":"images/world.png",
-      "text":"Read the documentation for an introduction to the self-organizing data web app.  Data was scraped from 3 different recipe websites and contains individual recipes along with each of their ingredients.",
-      "link":"files/recipes_doc.pdf",
+      "img":"images/zoomed_text.png",
+      "text":"Where I discuss the relationship between zoomed-in web text and difficult optimization problems.",
+      "link":"https://lululiu.wordpress.com/2015/01/10/an-optimization-problem/",
       "type":"file"
     },
-    { "id":"recipes-2",
+    { "id":"blog-2",
       "num":2,
       "r": 50,
-      "img":"images/recipe_dots.png",
-      "text":"Launch a working version of the tool overlaid with this website!  Click anywhere outside of the overlay window to close. ",
-      "link":"#",
-      "type": "recipes"
+      "img":"images/palm.png",
+      "text":"Super-resolution microscopy, with some personal anecdotes weaved in.",
+      "link":"https://lululiu.wordpress.com/2014/12/01/1922/",
+      "type": "file"
+    },
+    { "id":"blog-3",
+      "num":3,
+      "r": 60,
+      "img":"images/carbon.png",
+      "text":"Explaining climate models starting from carbon cycle basics.",
+      "link":"https://lululiu.wordpress.com/2014/09/05/climate-models-and-the-carbon-cycle-draft/",
+      "type": "file"
+    },
+    { "id":"blog-4",
+      "num":4,
+      "r": 50,
+      "img":"images/ring_charges.png",
+      "text":"A single charge emits light if it is accelerated in a circle.  Then, why doesn't a ring of current emit light?  Why is there a threshold for Cherenkov radiation?",
+      "link":"https://lululiu.wordpress.com/2013/03/07/ring-of-charges/",
+      "type": "file"
+    },
+    { "id":"blog-5",
+      "num":5,
+      "r": 50,
+      "img":"images/cows_dipoles.png",
+      "text":"<strong>Cows are dipoles</strong>.  Traditional report-the-news style science story.  Actually my most popular post by views because it got linked on reddit.",
+      "link":"https://lululiu.wordpress.com/2009/10/25/cows-are-dipoles/",
+      "type": "file"
+    },
+
+    { "id":"blog-6",
+      "num":6,
+      "r": 60,
+      "img":"images/pleiades.jpg",
+      "text":"<strong>The sky is full of holes</strong>. Why is the night sky dark?",
+      "link":"https://lululiu.wordpress.com/2009/09/02/the-sky-is-full-of-holes/",
+      "type": "file"
     }
   ]
 }
+

@@ -25,6 +25,15 @@ function updateNav(id){
         displayUpdate(id);
     },300);
 
+    var parentEl=d3.select("#content-div");
+
+
+    var nodes = parentEl.selectAll(".node");
+
+    //exit
+    nodes.style("opacity", 0).remove();
+
+
 }
 
 function displayUpdate(id){
@@ -58,7 +67,6 @@ function wrangleData(itemID){
 
 function updateFiles(parentID,data,itemID) {
 
-    lastDisp=.8;
     //link data
     var parentEl=d3.select("#"+parentID);
 
@@ -85,12 +93,12 @@ function updateFiles(parentID,data,itemID) {
 
 
     divs.attr("style",function(d){
-            var randRange=80;
-            var leftDisp=Math.random();
-            while (Math.abs(lastDisp-leftDisp)<0.4){
-                leftDisp=Math.random();
-            }
-            lastDisp=leftDisp;
+            //var randRange=80;
+            //var leftDisp=Math.random();
+            //while (Math.abs(lastDisp-leftDisp)<0.4){
+            //    leftDisp=Math.random();
+            //}
+            //lastDisp=leftDisp;
 
             //return "left:"+leftDisp*randRange+"px; top:-1000px; display: hidden;";
             return "left:50px; top:-400px; display: hidden;";

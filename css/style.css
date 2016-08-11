@@ -192,6 +192,10 @@ h2 {
 
 /*files*/
 
+.node-row {
+    clear:right;
+}
+
 .node-image {
     border-radius: 50%;
     opacity:.5;
@@ -228,6 +232,7 @@ h2 {
     /*margin: auto 2px;*/
     margin-right:15px;
     margin-left:-5px;
+    min-width:300px;
     /*background-color: rgba(255,255,255,.3)*/
 }
 
