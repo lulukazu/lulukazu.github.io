@@ -51,7 +51,7 @@
       "r": 60,
       "img":"images/magellanic_cloud.png",
       "text":"Deep in the southern night sky are two hazy balls of light.  They are the Large and Small Magellanic Clouds: dwarf galaxies residing within the dark matter halo of our own Milky Way. Their presence has been a source of mystery to cosmologists, as LCDM cosmological models predict that in the larger universe they should be very rare...",
-      "link":"https://www.youtube.com/v/gjjWcWFOiuU&amp;autoplay=1&amp;rel=0;",
+      "link":"https://www.youtube.com/embed/gjjWcWFOiuU",
       "type":"video",
       "videotext":"<p>We are interested in the cosmological context of the Milky Way -- is it a special galaxy in any way? We found thousands of galaxies like it in the SDSS sky survey, and also thousands of matching halos in the Bolshoi simulation, and asked, how many have neighbours like the Magellanic Clouds? In both the real and simulated Universes we find that roughly 5% of Milky Way-like galaxies have 2 satellites like the Magellanic Clouds -- our galaxy is a bit unusual!</p><p>How Common are the Magellanic Clouds?<br>Liu, Gerke, Wechsler, Behroozi, and Busha<br>2011, ApJ, 733, 62, arXiv:1011.2255</p>"
     },
@@ -80,7 +80,7 @@
       "r": 50,
       "img":"images/planets.png",
       "text":"The planet-finder satellite will search for planetary transits of stars in the local galaxy.  It is an all-sky mission that aims to simultaneously monitor more than 500,000 stars.  It is scheduled for launch 2017. [Mission plan video which I did not make]",
-      "link":"https://www.youtube.com/v/mpViVEO-ymc&amp;autoplay=1&amp;rel=0;",
+      "link":"https://www.youtube.com/embed/mpViVEO-ymc",
       "videotext":"The Transiting Exoplanet Survey Satellite (TESS) will discover thousands of exoplanets in orbit around the brightest stars in the sky. In a two-year survey of the solar neighborhood, TESS will monitor more than 500,000 stars for temporary drops in brightness caused by planetary transits. This first-ever spaceborne all-sky transit survey will identify planets ranging from Earth-sized to gas giants, around a wide range of stellar types and orbital distances. No ground-based survey can achieve this feat... ",
       "type":"video"
     },
@@ -99,7 +99,7 @@
       "text":"Example of an early STK simulation designing and testing optimal sky coverage strategies for the 2-year mission.",
       "type": "video",
       "videotext":"STK simulations of total mission sky coverage. Simulation includes motion of satellite and celestial bodies, accounting for lunar and solar interference which limits observation time.",
-      "link":"https://www.youtube.com/v/BxTvI-xHXsg&amp;autoplay=1&amp;rel=0;"
+      "link":"https://www.youtube.com/embed/BxTvI-xHXsg;"
     },
     { "id":"tess-4",
       "num":4,
@@ -193,7 +193,7 @@
       "img":"images/vob_gaussian.png",
       "text":"Example video showing a simple gaussian beam going through a focus.",
       "type": "video",
-      "link":"https://www.youtube.com/v/Bal-z5KUEPU&amp;autoplay=1&amp;rel=0;",
+      "link":"https://www.youtube.com/embed/Bal-z5KUEPU",
       "videotext":"<p>Simulated Gaussian Beam going through a focus.  Plotted using Virtual Optics Bench V2.0</p><p>Paraxial approximation</p>"
     },
 
@@ -202,7 +202,7 @@
       "r": 50,
       "img":"images/vob_fractional.png",
       "text":"A gaussian beam which has passed through a spiral phase plate acquires a topological charge and therefore orbital angular momentum.  The phase singularity at the center of the beam shows up as a dark spot which expands with increasing charge.",
-      "link":"https://www.youtube.com/v/ilgKjIh5n0k&amp;autoplay=1&amp;rel=0;",
+      "link":"https://www.youtube.com/embed/ilgKjIh5n0k",
       "type": "video",
       "videotext":"<p>A gaussian beam which has passed through a spiral phase plate acquires a topological charge and therefore orbital angular momentum.  The phase singularity at the center of the beam shows up as a dark spot which expands with increasing charge.</p><p>If the charge is not an integer per 2-pi phase accumulation, fractional charge effects manifest.  Fractional charge L-G beams are not self-similar solutions to the paraxial wave equation and can be decomposed into overlapping integer charge beams propagating in different directions.</p><p>Video shows simulated Laguerre-Gaussian beam with topological charge slowly evolving from 0-4 going through fractional charge regimes.</p>"
     }
