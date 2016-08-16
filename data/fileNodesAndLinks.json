@@ -12,7 +12,7 @@
     "num":2,
     "r": 60,
     "img":"images/vincent_PRL_cover.png",
-    "text":"Most recent PRL publication which demonstrated for the first time sub-femtonewton force measurements in fluid. <a href='files/PRL-2016-final-supplemental.pdf' target=new>Supplemental Info</a> | Press Summary",
+    "text":"Most recent PRL publication which demonstrated for the first time sub-femtonewton force measurements in fluid. <a href='files/PRL-2016-final-supplemental.pdf' target=new>Supplemental Info</a> | <a href='http://physics.aps.org/articles/v9/61' target=new>In the Press</a>",
     "link":"files/PRL-2016-final-text.pdf",
     "type":"file"
   },
