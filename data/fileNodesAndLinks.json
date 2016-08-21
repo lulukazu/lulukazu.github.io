@@ -3,9 +3,9 @@
   { "id":"optics-1",
     "num":1,
     "r": 50,
-    "img":"images/cad_objective.png",
-    "text":"Latest re-design of the objective assembly for the microscopy apparatus.",
-    "link":"files/CAD_Objective_Prism_Assembly.pdf",
+    "img":"images/microscope_image.png",
+    "text":"Documentation and manual for optical forces set-up hardware and alignment.  Work in progress.",
+    "link":"files/alignment_manual.pdf",
     "type":"file"
   },
   { "id":"optics-2",
