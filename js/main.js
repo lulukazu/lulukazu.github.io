@@ -112,11 +112,20 @@ function updateFiles(parentID,data,itemID) {
 
     //window.open('page.html','_newtab')
 
-    divs.append("div")
+    var dots=divs.append("div")
         .attr("class","dot")
         .style("border",function(d,i){
             return "2px solid "+colors_arr[i];
-        })
+        });
+
+    var plusSign=dots.append("div")
+        .attr("class","glyphicon")
+        .attr("class","glyphicon-plus")
+        .style("color",function(d,i){
+            return colors_arr[i];
+        });
+
+    dots
         .on("mouseover",function(d,i){
             var w= d.r*2;
             var h= d.r*2;
@@ -137,6 +146,9 @@ function updateFiles(parentID,data,itemID) {
                 .style("border","")
                 .style("left","-"+t1+"px")
                 .style("top","-"+t1+"px");
+            d3.select(this)
+                .selectAll("div")
+                .style("display","none");
 
         })
         .on("mouseout",function(d,i){
@@ -149,6 +161,7 @@ function updateFiles(parentID,data,itemID) {
                 .transition()
                 .duration(300)
                 .style("background", colorhere)
+                .style("border","2px solid "+colorhere)
                 .style("width", "20px")
                 .style("height","20px")
                 .style("border-radius","10px")

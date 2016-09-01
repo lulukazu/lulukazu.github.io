@@ -122,6 +122,12 @@ h2 {
     float:left;
 }
 
+.glyphicon-plus {
+    font-size:24px;
+    margin-top:-10.5px;
+    margin-left:3.5px;
+}
+
 .glyphicon-temp {
     font-size:12px;
 }
