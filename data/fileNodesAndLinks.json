@@ -8,40 +8,49 @@
     "link":"files/alignment_manual.pdf",
     "type":"file"
   },
+
   { "id":"optics-2",
     "num":2,
+    "r": 60,
+    "img":"images/chopper_mini.jpg",
+    "text":"Photo of a a portion of the optical setup (fiber coupling for pump laser with chopper for modulation).",
+    "link":"images/chopper.jpg",
+    "type":"page"
+  },
+
+  { "id":"optics-3",
+    "num":3,
+    "r": 50,
+    "img":"images/elliptical.png",
+    "text":"Manuscript for paper titled 'Elliptical Orbits of Microspheres in an Evanescent Field'.  Submitted, currently under review.",
+    "link":"files/elliptical_paper.pdf",
+    "type":"file"
+  },
+
+  { "id":"optics-4",
+    "num":4,
     "r": 60,
     "img":"images/vincent_PRL_cover.png",
     "text":"Most recent PRL publication which demonstrated for the first time sub-femtonewton force measurements in fluid. <a href='files/PRL-2016-final-supplemental.pdf' target=new>Supplemental Info</a> | <a href='http://physics.aps.org/articles/v9/61' target=new>In the Press</a>",
     "link":"files/PRL-2016-final-text.pdf",
     "type":"file"
   },
-  { "id":"optics-3",
-    "num":3,
+  { "id":"optics-5",
+    "num":5,
     "r": 50,
     "img":"images/forces_slide.png",
     "text":"Most recent conference presentation at META 2016 (Malaga, Spain)."  ,
     "link":"files/Meta2016_invited.pdf",
     "type":"file"
   },
-  { "id":"optics-4",
-    "num":4,
+  { "id":"optics-6",
+    "num":6,
     "r": 60,
     "img":"images/pnas_significance.png",
     "text":"2014 PNAS paper on evanescent wave microscopy method with absolute separation measurement capabilities in the single nanometer range."  ,
     "link":"files/PNAS-2014-final-text.pdf",
     "type":"file"
-  },
-
-  { "id":"optics-5",
-    "num":5,
-    "r": 50,
-    "img":"images/casimir.png",
-    "text":"Internal presentation explaining the basics of the theory of Casimir forces.",
-    "link":"files/Casimir_Presentation.pdf",
-    "type":"file"
   }
-
 
 ],
 

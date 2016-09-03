@@ -209,7 +209,7 @@ function updateFiles(parentID,data,itemID) {
                     img.src=d.link;
                     img.class="page-image";
                     img.id="image-id";
-                    img.style.width="92%"
+                    img.style.width="80%"
                     container.appendChild(img);
 
                     break;
