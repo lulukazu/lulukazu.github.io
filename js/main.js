@@ -112,6 +112,11 @@ function updateFiles(parentID,data,itemID) {
 
     //window.open('page.html','_newtab')
 
+    divs.append('img')
+        .style('position', 'absolute')
+        .style('width', 0)
+        .attr('src', function(d) { return d.img; });
+
     var dots=divs.append("div")
         .attr("class","dot")
         .style("border",function(d,i){
