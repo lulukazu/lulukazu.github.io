@@ -124,7 +124,8 @@ h2 {
 
 .dot .glyphicon-plus:before {
     vertical-align: middle;
-    line-height:16px;
+    line-height:17px;
+    margin-left:1px;
 }
 
 .dot .glyphicon-plus {
