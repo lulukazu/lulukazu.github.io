@@ -209,8 +209,12 @@ h2 {
 
 /*files*/
 
-.node-row {
+.node.row {
     clear:right;
+}
+
+.node.row:hover {
+    cursor: pointer;
 }
 
 .node-image {

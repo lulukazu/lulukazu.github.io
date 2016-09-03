@@ -118,23 +118,23 @@ function updateFiles(parentID,data,itemID) {
             return "2px solid "+colors_arr[i];
         });
 
-    var plusSign=dots.append("div")
+    /*var plusSign=dots.append("div")
         .attr("class","glyphicon glyphicon-plus")
         .style("color",function(d,i){
             return colors_arr[i];
-        });
+        });*/
 
-    dots
+    divs
         .on("mouseover",function(d,i){
             var w= d.r*2;
             var h= d.r*2;
             var w2=w*1.2;
 
             var t1= d.r/2;
-            var offsets =$(this).offset();
+            var offsets =$(this).select('.dot').offset();
             var top = offsets.top- d.r;
             var left = offsets.left- d.r;
-            d3.select(this)
+            d3.select(this).select('.dot')
                 .style("background", "url("+ d.img+") no-repeat")
                 .style("background-size",w2+"px")
                 .transition()
@@ -145,9 +145,9 @@ function updateFiles(parentID,data,itemID) {
                 .style("border","")
                 .style("left","-"+t1+"px")
                 .style("top","-"+t1+"px");
-            d3.select(this)
+            /*d3.select(this)
                 .selectAll("div")
-                .style("display","none");
+                .style("display","none");*/
 
         })
         .on("mouseout",function(d,i){
@@ -156,7 +156,7 @@ function updateFiles(parentID,data,itemID) {
 
             var t1= d.r/2;
             var colorhere=colors_arr[i];
-            d3.select(this)
+            d3.select(this).select('.dot')
                 .transition()
                 .duration(300)
                 .style("background", colorhere)
