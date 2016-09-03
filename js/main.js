@@ -119,8 +119,7 @@ function updateFiles(parentID,data,itemID) {
         });
 
     var plusSign=dots.append("div")
-        .attr("class","glyphicon")
-        .attr("class","glyphicon-plus")
+        .attr("class","glyphicon glyphicon-plus")
         .style("color",function(d,i){
             return colors_arr[i];
         });
