@@ -184,7 +184,7 @@
       "num":2,
       "r": 60,
       "img":"images/vob_documentation.png",
-      "text":"Documentation for the program.",
+      "text":"Some documentation for the matlab program.",
       "link":"https://lululiu.wordpress.com/2013/02/04/matlab-optics-table-application/",
       "type":"file"
     },
@@ -288,4 +288,3 @@
     }
   ]
 }
-

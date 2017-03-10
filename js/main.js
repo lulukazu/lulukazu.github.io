@@ -2,9 +2,12 @@
 var allData = [];
 
 var currentID="physics";
+var photoActive=0;
 // Variables for the visualization instances
 
-queue().defer(d3.json,"data/fileNodesAndLinks.json")
+queue()
+    .defer(d3.json,"data/fileNodesAndLinks.json")
+    .defer(d3.json,"data/photoData.json")
     .await(createVis);
 
 var colors={ "physics":'#DDE8E0',
@@ -14,34 +17,316 @@ var colors={ "physics":'#DDE8E0',
     "hobbies":'#8B8378'};
 
 var colors_arr=['#DDE8E0', '#749CA8', '#F9E0A8', '#D16B54', '#8B8378','#DDE8E0', '#749CA8', '#F9E0A8', '#D16B54', '#8B8378'];
+var defaultTour=0;
+
+
+function closeAll(){
+  closeNav();
+  var parentEl=d3.select("#content-div");
+  var nodes = parentEl.selectAll(".node");
+  nodes.style("opacity", 0).remove();
+  $('.div-line').remove();
+
+  var tourArea=document.getElementById('photo-tour-area');
+  photoActive=defaultTour;
+  isclicked=defaultTour;
+      d3.select(tourArea)
+      .attr("data","");
+  document.getElementById("photos-div-wrapper").style['display']="none";
+
+
+}
 
 function updateNav(id){
-    closeNav();
+    closeAll();
     document.getElementById("nav-button-"+currentID).style['background-color']="";
     document.getElementById("nav-text-"+currentID).style['background-color']="";
     document.getElementById("nav-button-"+id).style['background-color']=colors[id];
     document.getElementById("nav-text-"+id).style['background-color']="rgba(255,255,255,.3)";
-    setTimeout(function(){
-        displayUpdate(id);
-    },300);
 
-    var parentEl=d3.select("#content-div");
-
-
-    var nodes = parentEl.selectAll(".node");
-
-    //exit
-    nodes.style("opacity", 0).remove();
-
-
+    displayUpdate(id);
 }
 
 function displayUpdate(id){
+  if (id=="photography"){
     document.getElementById(currentID+"-nav").style.display="none";
-    document.getElementById(id+"-nav").style.display="block";
-    openNav();
-    currentID=id;
+    setTimeout(function(){
+      updatePhotos();
+      currentID=id;
+    },300);
+
+  }  else {
+      document.getElementById("content-wrapper").style['display']="block";
+
+
+      setTimeout(function(){
+        document.getElementById(currentID+"-nav").style.display="none";
+        document.getElementById(id+"-nav").style.display="block";
+        currentID=id;
+        openNav();
+      },300);
+
+      }
+
 }
+
+
+function updatePhotos(){
+      document.getElementById("photos-div-wrapper").style['display']="block";
+      document.getElementById("content-wrapper").style['display']="none";
+
+
+      var parentEl=d3.select("#photo-nav-dots")
+      var photoNodes = parentEl.selectAll(".pnode")
+          .data(photosData,function(d){
+            return d.id;});
+
+      photoNodes.exit()
+          .style("opacity", 0).remove();
+
+      //enter
+      isclicked=defaultTour;
+      var w=diameter_dots;
+      var w2=diameter_dots_highlighted
+      var r=w/2;
+      var r2=w2/2;
+      var dots_containers=photoNodes.enter()
+          .append("div").attr("class","pnode_container")
+          .style("top",function(d,i){
+            var disp=i*50;
+            return disp+"px";
+          })
+          .style("width",w2+"px")
+          .style("height",w2+"px");
+
+          var dots=dots_containers
+          .append("div")
+          .attr("class","pnode")
+          .style("border",function(d,i){
+                      return "2px solid "+colors_arr[i];
+                    })
+          .on("click",function(d,i){
+            //highlight current node
+            updateTour(d.num);
+            isclicked=i;
+            //de-highlight other inactive nodes
+            //??
+          })
+          .on("mouseover", function(d,i){
+
+            if (isclicked==i){
+
+            } else {
+            d3.select(this)
+                .style("background-color", function(){
+                  //return colors_arr[i];
+                  return "#fff"
+                })
+                .transition()
+                .duration(250)
+                .style("width", w2+"px")
+                .style("height",w2+"px")
+                .style("border-radius", r2+"px");
+              }
+          })
+          .on("mouseout", function(d,i){
+
+            if (isclicked==i){
+
+            } else {
+            d3.select(this)
+                .style("background-color", function(){
+                  return "#fff";})
+                .transition()
+                .duration(100)
+                .style("width", w+"px")
+                .style("height", w+"px")
+                .style("border-radius", r+"px");
+              }
+            });
+
+          parentEl.style("transform", function(d,i){
+            var translateAmount=(photosData.length)*50/2+w/2;
+            return "translate(0px,-"+translateAmount+"px)";
+          });
+          updateTour(defaultTour);
+  }
+
+var diameter_dots=20;
+var diameter_dots_highlighted=30;
+
+
+function highlightNode(id){
+  var pnodes=d3.selectAll('.pnode');
+  var w=diameter_dots;
+  var w2=diameter_dots_highlighted;
+  var r=w/2;
+  var r2=w2/2;
+
+  pnodes.transition()
+  .duration(200).style("background-color",function(d,i){
+    if (d.num==id){
+      return colors_arr[i];
+    } else {
+      return "#fff"
+    }
+  })
+  .style("width", function(d,i){
+    if (d.num==id){
+      return w2+"px";
+    } else {
+      return w+"px"
+    }
+  })
+  .style("height", function(d,i){
+    if (d.num==id){
+      return w2+"px";
+    } else {
+      return w+"px"
+    }
+  })
+  .style("border-radius", function(d,i){
+    if (d.num==id){
+      return r2+"px";
+    } else {
+      return r+"px"
+    }
+  })
+
+}
+
+
+function updateTour(tourIndex){
+  var tourArea=document.getElementById('photo-tour-area');
+  var svgLink=photosData[tourIndex].link;
+  photoActive=0;
+
+  var defer = $.Deferred();
+
+  var a = function() {
+    var defer = $.Deferred();
+    setTimeout(function() {
+        d3.select(tourArea)
+        .style("opacity",0)
+        .attr("data",svgLink);
+        defer.resolve(); // When this fires, the code in a().then(/..../); is executed.
+    }, 100);
+
+    return defer;
+  };
+
+  var b = function() {
+      var defer = $.Deferred();
+      setTimeout(function () {
+          assignZoom(tourArea);
+          defer.resolve();
+      }, 100);
+
+      return defer;
+  };
+  //var allImages=d3.select("#photo-tour-area").selectAll("image");
+  //console.log(allImages);
+
+  a().then(b);
+
+  highlightNode(tourIndex);
+
+}
+
+
+
+function assignZoom(tourArea){
+      //document.getElementById("photos-div-wrapper").style['display']="block";
+      //controls zoom behavior on loaded image
+
+      d3.select(tourArea)
+      .transition()
+      .duration(700)
+      .style("opacity",1);
+
+      var subdoc = tourArea.contentDocument;
+      var svgEl=d3.select(subdoc).select("svg");
+      var subG=d3.select(subdoc).select("g");
+
+      //subG element has transform attributes which are horrible, need to get them
+      var xforms = subG.attr('transform');
+      var parts  = /translate\(\s*([^\s,)]+)[ ,]([^\s,)]+)/.exec(xforms);
+      var firstX = parts[1], firstY = parts[2];
+
+      var content = subG.html();
+      subG.html('');
+      svgEl.html('');
+      var zoomer = svgEl.append('g')
+        .attr('class', 'zoomer1')
+        .html(content);
+
+        console.log( "jq", $(zoomer).offset())
+
+      var svgMax=300;
+      // svgEl.html('');
+      //subG.attr('transform','');
+      //
+      // var zoomer = svgEl.append('g')
+      //   .attr('class', 'zoomer')
+      //   .html(content);
+      svgEl.attr("viewBox","0 0 "+svgMax+" "+svgMax);
+
+        svgEl.on("click",function(){
+          var isOnBackground = d3.event.target.tagName == 'svg';
+
+          if (isOnBackground) {
+          zoomer.transition()
+            .duration(750)
+            .attr("transform", "translate(" + [0,0] + ")scale(" + 1 + ")");
+            photoActive=0;
+          }
+        })
+        //dimensions of bounding box of g element
+
+//get current x,y positions of images
+
+      var allImages=d3.select(subdoc).selectAll('image')
+      .attr("x",function(d,i){
+        var currentX=d3.select(this).attr("x");
+        return parseFloat(currentX)+parseFloat(firstX);
+      })
+      .attr("y",function(d,i){
+        var currentY=d3.select(this).attr("y");
+        return parseFloat(currentY)+parseFloat(firstY);
+      })
+      .on("mouseover",function(){
+        d3.select(this).style("cursor","pointer");
+      })
+      .on("click",function(d,i){
+        var currentX=d3.select(this).attr("x");
+        var currentY=d3.select(this).attr("y");
+        var currentWidth=d3.select(this).attr("width");
+        var currentHeight=d3.select(this).attr("height");
+
+
+        var scale = 1.0 / Math.max(currentWidth / svgMax, currentHeight / svgMax);
+        center_x=(parseFloat(currentX) + parseFloat(currentWidth)*.5)*scale; // relative to svg left top
+        center_y=(parseFloat(currentY) + parseFloat(currentHeight)*.5)*scale; // relative to svg left top
+        var translate=[-center_x + svgMax/2,-center_y + svgMax/2];
+        if (photoActive==0){
+        zoomer.transition()
+          .duration(750)
+          .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
+          // insert buttons for left right navigation here?
+          photoActive=1;
+        } else {
+          zoomer.transition()
+            .duration(750)
+            .attr("transform", "translate(" + [0,0] + ")scale(" + 1 + ")");
+
+          photoActive=0;
+        }
+      })
+
+      // end zoom behavior
+  }
+
+
 
 function openNav() {
     document.getElementById("nav-box").style.left = "0px";
@@ -54,9 +339,10 @@ function closeNav() {
 
 
 
-function createVis(error,data1) {
+function createVis(error,data1,data2) {
     // Create an object instance
     allData=data1;
+    photosData=data2;
 }
 
 function wrangleData(itemID){
@@ -268,4 +554,3 @@ window.onclick = function(event) {
         modal_page.style.display="none";
     }
 };
-

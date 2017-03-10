@@ -34,7 +34,19 @@
 
 	<div class="row">
 		<div class="col-md-7 left-svg-div">
-			<div class="row">
+			<div class="row" id="photos-div-wrapper" style="display:none;">
+				<div class="col-md-11" id="photo-disp-column">
+					<object type="image/svg+xml" id="photo-tour-area">
+	  				Your browser does not support SVG
+					</object>
+				</div>
+				<div class="col-md-1" id="photo-nav-column">
+					<div id="photo-nav-dots">
+
+					</div>
+				</div>
+			</div>
+			<div class="row" id="content-wrapper">
 				<div class="col-md-8" id="content-div-parent">
 					<div id="content-div"></div>
 				</div>
@@ -99,6 +111,11 @@
 								<p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut cursus neque. Donec ac ni</p>
 							</div>
 						</div>
+
+						<div class="nav-item" id="photography-nav" style="display:none;">
+						</div>
+
+						</div>
 					</div>
 
 				</div>
@@ -141,9 +158,9 @@
 				<div class="col-sm-4 nav-text" id="nav-text-writing">Writing <div class="glyphicon glyphicon-temp glyphicon-wrench"></div></div>
 				<div class="col-sm-4"></div>
 			</div>
-			<div class="row nav-button" id="nav-button-photography">
+			<div class="row nav-button" id="nav-button-photography" onclick="updateNav('photography');">
 				<div class="col-sm-4"></div>
-				<div class="col-sm-4 nav-text" id="nav-text-photography">Photos <div class="glyphicon glyphicon-temp glyphicon-wrench"></div></div>
+				<div class="col-sm-4 nav-text" id="nav-text-photography">Photos </div>
 				<div class="col-sm-4"></div>
 			</div>
 			<div class="row nav-button" id="nav-button-hobbies">
@@ -254,7 +271,7 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/d3.min.js"></script>
-    <script src="js/queue.v1.min.js"></script>
+  <script src="js/queue.v1.min.js"></script>
 	<script src="js/main-force.js"></script>
 	<script src="js/forceDiagram.js"></script>
 	<script src="js/d3.tip.js"></script>
