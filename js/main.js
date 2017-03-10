@@ -72,7 +72,9 @@ function displayUpdate(id){
 
 
 function updatePhotos(){
+      console.log(document.getElementById("photos-div-wrapper").style['display'])
       document.getElementById("photos-div-wrapper").style['display']="block";
+
       document.getElementById("content-wrapper").style['display']="none";
 
 
