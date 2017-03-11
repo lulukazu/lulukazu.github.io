@@ -48,6 +48,7 @@ function updateNav(id){
 }
 
 function displayUpdate(id){
+
   if (id=="photography"){
     document.getElementById(currentID+"-nav").style.display="none";
     setTimeout(function(){

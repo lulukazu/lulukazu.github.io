@@ -2,5 +2,9 @@
   { "id":"tour1",
     "num":0,
     "link":"photos/nebraska.svg"
+  },
+  { "id":"tour2",
+    "num":1,
+    "link":"photos/cry.svg"
   }
 ]
