@@ -27,7 +27,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="157.79836"
+     inkscape:cx="74.762646"
      inkscape:cy="143.50938"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -58,42 +58,42 @@
     <image
        sodipodi:absref="C:\Users\lulu\Documents\GitHub\lulukazu.github.io\photos\IMG_6730.jpg"
        xlink:href="IMG_6730.jpg"
-       width="133.00002"
-       height="88.666672"
-       preserveAspectRatio="none"
-       style="image-rendering:optimizeQuality"
-       id="image4698"
+       y="834.06549"
        x="30.582325"
-       y="834.06549" />
+       id="image4698"
+       style="image-rendering:optimizeQuality"
+       preserveAspectRatio="none"
+       height="88.666672"
+       width="133.00002" />
     <image
        sodipodi:absref="C:\Users\lulu\Documents\GitHub\lulukazu.github.io\photos\IMG_2288.JPG"
        xlink:href="IMG_2288.JPG"
-       width="93.357132"
-       height="62.238079"
-       preserveAspectRatio="none"
-       style="image-rendering:optimizeQuality"
-       id="image4709"
+       y="760.93439"
        x="152.51067"
-       y="760.93439" />
-    <image
-       sodipodi:absref="C:\Users\lulu\Documents\GitHub\lulukazu.github.io\photos\8565842324_cc7221e2d6_o.jpg"
-       xlink:href="8565842324_cc7221e2d6_o.jpg"
-       width="63.809525"
-       height="95.714287"
-       preserveAspectRatio="none"
+       id="image4709"
        style="image-rendering:optimizeQuality"
-       id="image4731"
-       x="177.5"
-       y="884.86224" />
+       preserveAspectRatio="none"
+       height="62.238079"
+       width="93.357132" />
     <image
        sodipodi:absref="C:\Users\lulu\Documents\GitHub\lulukazu.github.io\photos\3952836014_1198c0d23d_o.jpg"
        xlink:href="3952836014_1198c0d23d_o.jpg"
-       width="67.023811"
+       y="935.39777"
+       x="82.85714"
+       id="image4742"
+       style="image-rendering:optimizeQuality"
+       preserveAspectRatio="none"
        height="100.53571"
+       width="67.023811" />
+    <image
+       sodipodi:absref="C:\Users\lulu\Documents\GitHub\lulukazu.github.io\photos\3864586188_369013338d_o.jpg"
+       xlink:href="3864586188_369013338d_o.jpg"
+       width="76.462502"
+       height="113.7"
        preserveAspectRatio="none"
        style="image-rendering:optimizeQuality"
-       id="image4742"
-       x="82.85714"
-       y="935.39777" />
+       id="image5299"
+       x="182.24568"
+       y="872.7171" />
   </g>
 </svg>

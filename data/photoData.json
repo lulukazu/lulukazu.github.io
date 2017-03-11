@@ -1,10 +1,18 @@
 [
   { "id":"tour1",
     "num":0,
-    "link":"photos/nebraska.svg"
+    "link":"photos/street.svg"
   },
   { "id":"tour2",
     "num":1,
+    "link":"photos/nebraska.svg"
+  },
+  { "id":"tour3",
+    "num":2,
     "link":"photos/cry.svg"
+  },
+  { "id":"tour4",
+    "num":3,
+    "link":"photos/places.svg"
   }
 ]
