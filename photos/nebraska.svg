@@ -27,8 +27,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="78.684735"
-     inkscape:cy="151.34822"
+     inkscape:cx="124.37681"
+     inkscape:cy="166.60441"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="false"
@@ -61,7 +61,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -73,82 +73,72 @@
     <image
        sodipodi:absref="C:\Users\lulu\Documents\GitHub\lulukazu.github.io\photos\IMG_1908-2.JPG"
        xlink:href="IMG_1908-2.JPG"
-       y="573.09448"
-       x="123.77596"
-       id="image4155"
-       style="image-rendering:optimizeQuality"
+       width="73.253822"
+       height="48.835884"
        preserveAspectRatio="none"
-       height="40.000004"
-       width="60" />
+       style="image-rendering:optimizeQuality"
+       id="image4155"
+       x="115.68353"
+       y="585.23981" />
     <image
        sodipodi:absref="C:\Users\lulu\Documents\GitHub\lulukazu.github.io\photos\IMG_1681.JPG"
        xlink:href="IMG_1681.JPG"
-       y="463.49817"
-       x="123.77596"
-       id="image4166"
-       style="image-rendering:optimizeQuality"
+       width="73.253822"
+       height="48.835876"
        preserveAspectRatio="none"
-       height="40"
-       width="60" />
+       style="image-rendering:optimizeQuality"
+       id="image4166"
+       x="116.17678"
+       y="497.80029" />
     <image
        sodipodi:absref="C:\Users\lulu\Documents\GitHub\lulukazu.github.io\photos\IMG_2042.JPG"
        xlink:href="IMG_2042.JPG"
-       y="505.51849"
-       x="129.77597"
-       id="image4177"
+       width="53.719467"
+       height="35.812977"
+       preserveAspectRatio="none"
        style="image-rendering:optimizeQuality"
-       preserveAspectRatio="none"
-       height="31.999996"
-       width="48" />
-    <image
-       sodipodi:absref="C:\Users\lulu\Documents\GitHub\lulukazu.github.io\photos\IMG_1727.JPG"
-       xlink:href="IMG_1727.JPG"
-       y="724.04834"
-       x="129.77597"
-       id="image4188"
-       style="fill:#483737;image-rendering:optimizeQuality"
-       preserveAspectRatio="none"
-       height="32.000004"
-       width="48" />
+       id="image4177"
+       x="125.96011"
+       y="460.30359" />
     <image
        sodipodi:absref="C:\Users\lulu\Documents\GitHub\lulukazu.github.io\photos\IMG_1980.JPG"
        xlink:href="IMG_1980.JPG"
-       y="615.02045"
-       x="129.77597"
-       id="image4210"
-       style="image-rendering:optimizeQuality"
+       width="53.719467"
+       height="35.818237"
        preserveAspectRatio="none"
-       height="32.0047"
-       width="48" />
+       style="image-rendering:optimizeQuality"
+       id="image4210"
+       x="125.49031"
+       y="634.85126" />
     <image
        sodipodi:absref="C:\Users\lulu\Documents\GitHub\lulukazu.github.io\photos\IMG_1703.JPG"
        xlink:href="IMG_1703.JPG"
-       y="648.79865"
-       x="129.77597"
-       id="image4223"
-       style="image-rendering:optimizeQuality"
+       width="53.719467"
+       height="35.812981"
        preserveAspectRatio="none"
-       height="32"
-       width="48" />
+       style="image-rendering:optimizeQuality"
+       id="image4223"
+       x="125.49031"
+       y="671.79016" />
     <image
        sodipodi:absref="C:\Users\lulu\Documents\GitHub\lulukazu.github.io\photos\IMG_1738.JPG"
        xlink:href="IMG_1738.JPG"
-       y="539.22052"
-       x="129.77597"
-       id="image4234"
-       style="image-rendering:optimizeQuality"
+       width="53.719467"
+       height="35.81823"
        preserveAspectRatio="none"
-       height="32.004692"
-       width="48" />
+       style="image-rendering:optimizeQuality"
+       id="image4234"
+       x="125.98362"
+       y="547.99017" />
     <image
        sodipodi:absref="C:\Users\lulu\Documents\GitHub\lulukazu.github.io\photos\IMG_1949.JPG"
        xlink:href="IMG_1949.JPG"
-       y="682.4566"
-       x="123.77596"
-       id="image4245"
-       style="image-rendering:optimizeQuality"
+       width="73.253822"
+       height="48.835884"
        preserveAspectRatio="none"
-       height="40.000004"
-       width="60" />
+       style="image-rendering:optimizeQuality"
+       id="image4245"
+       x="115.21004"
+       y="708.61047" />
   </g>
 </svg>
