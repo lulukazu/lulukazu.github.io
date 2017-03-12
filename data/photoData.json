@@ -9,10 +9,14 @@
   },
   { "id":"tour3",
     "num":2,
-    "link":"photos/cry.svg"
+    "link":"photos/places.svg"
   },
   { "id":"tour4",
     "num":3,
-    "link":"photos/places.svg"
+    "link":"photos/cry.svg"
+  },
+  { "id":"tour5",
+    "num":4,
+    "link":"photos/portraits.svg"
   }
 ]
