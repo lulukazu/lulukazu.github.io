@@ -13,6 +13,8 @@ body, a, div {
     left: 58.33%;
 }
 
+
+
 #photos-div-wrapper {
   width:100%;
   height:100%;
@@ -23,13 +25,14 @@ body, a, div {
 
 #photo-disp-column {
   padding-right:0px;
-  margin-top:10px;
+  padding-left:0px;
+  margin-top:0px;
 }
 
 #photo-tour-area {
   display:block;
   margin:auto;
-  width:90%;
+  width:95%;
 }
 
 

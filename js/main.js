@@ -259,6 +259,45 @@ function assignZoom(tourArea){
       var content = subG.html();
       subG.html('');
       svgEl.html('');
+
+      var naviRight=svgEl.append('g')
+      .attr('class','arrowG')
+      .style('opacity',0);
+
+      var naviLeft=svgEl.append('g')
+      .attr('class','arrowG')
+      .style('opacity',0);
+
+
+      naviRight.append('polygon')
+      .attr('points','298,150 293,145 293,155')
+      .attr('id','arrowright')
+      .style('fill','#ccc')
+      .style('stroke','none')
+      .on('mouseover',function(d,i){
+        d3.select(this).style('fill','#000');
+        d3.select(this).style('cursor','pointer');
+      })
+      .on('mouseout',function(d,i){
+        d3.select(this).style('fill','#ccc')
+      });
+
+      naviLeft.append('polygon')
+      .attr('points','2,150 7,145 7,155')
+      .attr('id','arrowleft')
+      .style('fill','#ccc')
+      .style('stroke','none')
+      .on('mouseover',function(d,i){
+        d3.select(this).style('fill','#000');
+        d3.select(this).style('cursor','pointer');
+      })
+      .on('mouseout',function(d,i){
+        d3.select(this).style('fill','#ccc')
+      });
+
+
+
+
       var zoomer = svgEl.append('g')
         .attr('class', 'zoomer1')
         .html(content);
@@ -282,6 +321,11 @@ function assignZoom(tourArea){
             .duration(750)
             .attr("transform", "translate(" + [0,0] + ")scale(" + 1 + ")");
             photoActive=0;
+          naviLeft
+            .style('opacity',0);
+          naviRight
+            .style('opacity',0);
+
           }
         })
         //dimensions of bounding box of g element
@@ -306,8 +350,7 @@ function assignZoom(tourArea){
         var currentWidth=d3.select(this).attr("width");
         var currentHeight=d3.select(this).attr("height");
 
-
-        var scale = 1.0 / Math.max(currentWidth / svgMax, currentHeight / svgMax);
+        var scale = .9 / Math.max(currentWidth / svgMax, currentHeight / svgMax);
         center_x=(parseFloat(currentX) + parseFloat(currentWidth)*.5)*scale; // relative to svg left top
         center_y=(parseFloat(currentY) + parseFloat(currentHeight)*.5)*scale; // relative to svg left top
         var translate=[-center_x + svgMax/2,-center_y + svgMax/2];
@@ -317,11 +360,17 @@ function assignZoom(tourArea){
           .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
           // insert buttons for left right navigation here?
           photoActive=1;
+        naviLeft.transition()
+        .duration(750).style('opacity',1);
+        naviRight.transition()
+        .duration(750).style('opacity',1);
+
         } else {
           zoomer.transition()
             .duration(750)
             .attr("transform", "translate(" + [0,0] + ")scale(" + 1 + ")");
-
+            naviLeft.style('opacity',0);
+            naviRight.style('opacity',0)
           photoActive=0;
         }
       })
