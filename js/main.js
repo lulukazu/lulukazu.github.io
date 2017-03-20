@@ -236,6 +236,8 @@ function updateTour(tourIndex){
 
 }
 
+var imageIndex=0;
+var allImages=[];
 
 
 function assignZoom(tourArea){
@@ -260,6 +262,38 @@ function assignZoom(tourArea){
       subG.html('');
       svgEl.html('');
 
+      var zoomer = svgEl.append('g')
+        .attr('class', 'zoomer1')
+        .html(content);
+
+      var svgMax=300;
+
+
+      //get current x,y positions of images
+
+      allImages1=d3.select(subdoc).selectAll('image')
+      .attr("x",function(d,i){
+        var currentX=d3.select(this).attr("x");
+        return parseFloat(currentX)+parseFloat(firstX);
+      })
+      .attr("y",function(d,i){
+        var currentY=d3.select(this).attr("y");
+        return parseFloat(currentY)+parseFloat(firstY);
+      })
+      .on("mouseover",function(){
+        d3.select(this).style("cursor","pointer");
+      })
+      .on("click",function(d,i){
+        var thisImage=d3.select(this);
+        console.log(thisImage)
+        clickOn(thisImage,svgMax,zoomer,naviLeft,naviRight,i);
+      })
+
+      allImages=allImages1[0];
+
+
+
+//navigation
       var naviRight=svgEl.append('g')
       .attr('class','arrowG')
       .style('opacity',0);
@@ -267,6 +301,8 @@ function assignZoom(tourArea){
       var naviLeft=svgEl.append('g')
       .attr('class','arrowG')
       .style('opacity',0);
+
+
 
 
       naviRight.append('polygon')
@@ -280,6 +316,13 @@ function assignZoom(tourArea){
       })
       .on('mouseout',function(d,i){
         d3.select(this).style('fill','#ccc')
+      })
+      .on('click',function(d,i){
+        var currentImage=imageIndex;
+        var nextImage=(((currentImage+1)%allImages.length)+allImages.length)%allImages.length;
+
+        var nextImageObject=d3.select(allImages[nextImage]);
+        clickOn(nextImageObject,svgMax,zoomer,naviLeft,naviRight,nextImage);
       });
 
       naviLeft.append('polygon')
@@ -293,18 +336,17 @@ function assignZoom(tourArea){
       })
       .on('mouseout',function(d,i){
         d3.select(this).style('fill','#ccc')
+      })
+      .on('click',function(d,i){
+        var currentImage=imageIndex;
+        var nextImage=(((currentImage-1)%allImages.length)+allImages.length)%allImages.length;
+
+        var nextImageObject=d3.select(allImages[nextImage]);
+        clickOn(nextImageObject,svgMax,zoomer,naviLeft,naviRight,nextImage);
       });
 
 
 
-
-      var zoomer = svgEl.append('g')
-        .attr('class', 'zoomer1')
-        .html(content);
-
-        console.log( "jq", $(zoomer).offset())
-
-      var svgMax=300;
       // svgEl.html('');
       //subG.attr('transform','');
       //
@@ -330,54 +372,47 @@ function assignZoom(tourArea){
         })
         //dimensions of bounding box of g element
 
-//get current x,y positions of images
 
-      var allImages=d3.select(subdoc).selectAll('image')
-      .attr("x",function(d,i){
-        var currentX=d3.select(this).attr("x");
-        return parseFloat(currentX)+parseFloat(firstX);
-      })
-      .attr("y",function(d,i){
-        var currentY=d3.select(this).attr("y");
-        return parseFloat(currentY)+parseFloat(firstY);
-      })
-      .on("mouseover",function(){
-        d3.select(this).style("cursor","pointer");
-      })
-      .on("click",function(d,i){
-        var currentX=d3.select(this).attr("x");
-        var currentY=d3.select(this).attr("y");
-        var currentWidth=d3.select(this).attr("width");
-        var currentHeight=d3.select(this).attr("height");
-
-        var scale = .9 / Math.max(currentWidth / svgMax, currentHeight / svgMax);
-        center_x=(parseFloat(currentX) + parseFloat(currentWidth)*.5)*scale; // relative to svg left top
-        center_y=(parseFloat(currentY) + parseFloat(currentHeight)*.5)*scale; // relative to svg left top
-        var translate=[-center_x + svgMax/2,-center_y + svgMax/2];
-        if (photoActive==0){
-        zoomer.transition()
-          .duration(750)
-          .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
-          // insert buttons for left right navigation here?
-          photoActive=1;
-        naviLeft.transition()
-        .duration(750).style('opacity',1);
-        naviRight.transition()
-        .duration(750).style('opacity',1);
-
-        } else {
-          zoomer.transition()
-            .duration(750)
-            .attr("transform", "translate(" + [0,0] + ")scale(" + 1 + ")");
-            naviLeft.style('opacity',0);
-            naviRight.style('opacity',0)
-          photoActive=0;
-        }
-      })
 
       // end zoom behavior
   }
 
+
+function clickOn(thisImage,svgMax,zoomer,naviLeft,naviRight,index) {
+  var currentX=thisImage.attr("x");
+  var currentY=thisImage.attr("y");
+  var currentWidth=thisImage.attr("width");
+  var currentHeight=thisImage.attr("height");
+
+  var scale = .9 / Math.max(currentWidth / svgMax, currentHeight / svgMax);
+  center_x=(parseFloat(currentX) + parseFloat(currentWidth)*.5)*scale; // relative to svg left top
+  center_y=(parseFloat(currentY) + parseFloat(currentHeight)*.5)*scale; // relative to svg left top
+  var translate=[-center_x + svgMax/2,-center_y + svgMax/2];
+
+
+
+  if (photoActive==0 || index!=imageIndex){
+  zoomer.transition()
+    .duration(750)
+    .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
+    // insert buttons for left right navigation here?
+    photoActive=1;
+  naviLeft.transition()
+  .duration(750).style('opacity',1);
+  naviRight.transition()
+  .duration(750).style('opacity',1);
+
+  } else {
+    zoomer.transition()
+      .duration(750)
+      .attr("transform", "translate(" + [0,0] + ")scale(" + 1 + ")");
+      naviLeft.style('opacity',0);
+      naviRight.style('opacity',0)
+    photoActive=0;
+  }
+
+  imageIndex=index;
+}
 
 
 function openNav() {
